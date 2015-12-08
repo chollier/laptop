@@ -9,32 +9,21 @@ trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
 
 # set -e
 
-if [ ! -d "$HOME/.bin/" ]; then
-  mkdir "$HOME/.bin"
-fi
-
-
-case "$SHELL" in
-  */zsh) : ;;
-  *)
-    fancy_echo "Changing your shell to zsh ..."
-      chsh -s "$(which zsh)"
-    ;;
-esac
-
 if ! command -v brew >/dev/null; then
   fancy_echo "Installing Homebrew ..."
-    curl -fsS \
-      'https://raw.githubusercontent.com/Homebrew/install/master/install' | ruby
-
+    curl -fsS 'https://raw.githubusercontent.com/Homebrew/install/master/install' | ruby
     brew install caskroom/cask/brew-cask
     export PATH="/usr/local/bin:$PATH"
 else
   fancy_echo "Homebrew already installed. Skipping ..."
 fi
 
-fancy_echo "Installing rcm..."
-  brew install rcm
+if ! command -v brew >/dev/null; then
+  fancy_echo "Installing rcm..."
+    brew install rcm
+else
+  fancy_echo "rcm already installed skipping"
+fi
 
 # Clone this repo
 cd ~
@@ -42,7 +31,7 @@ if [ ! -d "$HOME/mydotfiles" ]; then
   fancy_echo "Downloading dotfiles"
     git clone git://github.com/chollier/mydotfiles
 else
-  fancy_echo "Updating dotfiles..."
+  fancy_echo "mydotfiles already present updating them..."
     cd ~/mydotfiles
     git pull
 fi
@@ -74,7 +63,7 @@ fancy_echo "Installing and starting docker"
 # Install Homebrew bundle and runs it
 fancy_echo "Installing Homebrew bundle and running it..."
   brew tap Homebrew/bundle
-  cd ~/laptop &&  brew bundle
+  cd ~/laptop && brew bundle
 
 # Some OS X config
 # safari dev
@@ -127,6 +116,7 @@ fancy_echo "Setting up Dock..."
   defaults write com.apple.dock minimize-to-application -bool true
   defaults write com.apple.dock orientation left
   defaults write com.apple.dock dashboard-in-overlay -bool true
+  defaults write com.apple.dock largesize 68.41435241699219
 
   killall Dock
 
