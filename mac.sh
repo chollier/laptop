@@ -8,6 +8,7 @@ fancy_echo() {
 trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
 
 # set -e
+sudo xcodebuild -license
 
 if ! command -v brew >/dev/null; then
   fancy_echo "Installing Homebrew ..."
@@ -26,6 +27,16 @@ else
 fi
 
 # Clone this repo
+cd ~
+if [ ! -d "$HOME/laptop" ]; then
+  fancy_echo "Downloading repo"
+    git clone git://github.com/chollier/laptop
+else
+  fancy_echo "laptop files already present updating them..."
+    cd ~/laptop
+    git pull
+fi
+# Clone dotfiles
 cd ~
 if [ ! -d "$HOME/mydotfiles" ]; then
   fancy_echo "Downloading dotfiles"
