@@ -38,8 +38,14 @@ fancy_echo "Installing rcm..."
 
 # Clone this repo
 cd ~
-fancy_echo "Downloading dotfiles"
-  git clone git://github.com/chollier/mydotfiles
+if [ ! -d "$HOME/mydotfiles" ]; then
+  fancy_echo "Downloading dotfiles"
+    git clone git://github.com/chollier/mydotfiles
+else
+  fancy_echo "Uploading dotfiles..."
+    cd ~/mydotfiles
+    git pull
+fi
 
 # Install homebrew
 # Installing dotfiles
