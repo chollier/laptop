@@ -5,9 +5,9 @@ fancy_echo() {
   printf "\n$fmt\n" "$@"
 }
 
-# trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
+trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
 
-set -e
+# set -e
 
 if [ ! -d "$HOME/.bin/" ]; then
   mkdir "$HOME/.bin"
@@ -47,12 +47,10 @@ else
     git pull
 fi
 
-# Install homebrew
 # Installing dotfiles
 fancy_echo "Installing dotfiles"
   env RCRC=$HOME/mydotfiles/rcrc rcup
-
-# source ~/.zshrc
+  source ~/.zshrc
 
 # install xcode CLI
 fancy_echo "Installing XCode CLI Tools..."
@@ -61,8 +59,9 @@ fancy_echo "Installing XCode CLI Tools..."
 # Install oh my zsh
 fancy_echo "Installing oh-my-zsh..."
   sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  source ~/.zshrc
 
-source ~/.zshrc
+
 
 #installing docker
 fancy_echo "Installing and starting docker"
@@ -75,7 +74,7 @@ fancy_echo "Installing and starting docker"
 # Install Homebrew bundle and runs it
 fancy_echo "Installing Homebrew bundle and running it..."
   brew tap Homebrew/bundle
-  cd ~/mydotfiles &&  brew bundle
+  cd ~/laptop &&  brew bundle
 
 # Some OS X config
 # safari dev
@@ -143,8 +142,8 @@ fancy_echo "Install Monaco for Powerline..."
   open Monaco*
 
 #install node and ruby last versions
-source ~/.zshrc
 
+source ~/.zshrc
 fancy_echo "Running nvm install stable..."
   nvm install stable
 

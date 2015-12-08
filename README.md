@@ -3,7 +3,7 @@ Install XCode from the App Store
 #Installing :
 
 ```
-sh <(curl -s https://raw.githubusercontent.com/chollier/laptop/master/mac.sh)
+zsh <(curl -s https://raw.githubusercontent.com/chollier/laptop/master/mac.sh)
 ```
 
 ## Leftovers:
