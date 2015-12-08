@@ -130,16 +130,12 @@ fancy_echo "Setting up Dock..."
 
   killall Dock
 
-# install iterm2 solarized colors :
-fancy_echo "Install iterm2 Solarized colors"
-  cd ~/Downloads
-  wget "https://raw.githubusercontent.com/altercation/solarized/master/iterm2-colors-solarized/Solarized%20Dark.itermcolors"
-  wget https://raw.githubusercontent.com/altercation/solarized/master/iterm2-colors-solarized/Solarized%20Light.itermcolors
-  open Solarized*
-
 fancy_echo "Install Monaco for Powerline..."
   wget https://gist.github.com/baopham/1838072/raw/616d338cea8b9dcc3a5b17c12fe3070df1b738c0/Monaco%2520for%2520Powerline.otf
   open Monaco*
+
+fancy_echo "Install iTerm Preferences..."
+  cp ~/laptop/plist/com.googlecode.iterm2.plist ~/Library/Preferences/
 
 #install node and ruby last versions
 
