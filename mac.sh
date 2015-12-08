@@ -5,6 +5,8 @@ fancy_echo() {
   printf "\n$fmt\n" "$@"
 }
 
+chsh -s $(which zsh)
+
 trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
 
 # set -e
@@ -55,6 +57,7 @@ fancy_echo "Installing dotfiles"
 # install xcode CLI
 fancy_echo "Installing XCode CLI Tools..."
   xcode-select --install
+  read lol
 
 # Install oh my zsh
 fancy_echo "Installing oh-my-zsh..."
@@ -134,6 +137,7 @@ fancy_echo "Setting up Dock..."
 fancy_echo "Install Monaco for Powerline..."
   wget https://gist.github.com/baopham/1838072/raw/616d338cea8b9dcc3a5b17c12fe3070df1b738c0/Monaco%2520for%2520Powerline.otf
   open Monaco*
+  read lol
 
 fancy_echo "Install iTerm Preferences..."
   cp ~/laptop/plist/com.googlecode.iterm2.plist ~/Library/Preferences/
