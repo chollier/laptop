@@ -42,7 +42,7 @@ if [ ! -d "$HOME/mydotfiles" ]; then
   fancy_echo "Downloading dotfiles"
     git clone git://github.com/chollier/mydotfiles
 else
-  fancy_echo "Uploading dotfiles..."
+  fancy_echo "Updating dotfiles..."
     cd ~/mydotfiles
     git pull
 fi
@@ -52,7 +52,7 @@ fi
 fancy_echo "Installing dotfiles"
   env RCRC=$HOME/mydotfiles/rcrc rcup
 
-source ~/.zshrc
+# source ~/.zshrc
 
 # install xcode CLI
 fancy_echo "Installing XCode CLI Tools..."
