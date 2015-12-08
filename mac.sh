@@ -21,8 +21,9 @@ else
   fancy_echo "Homebrew already installed. Skipping ..."
 fi
 
-if ! command -v brew >/dev/null; then
+if ! command -v lsrc >/dev/null; then
   fancy_echo "Installing rcm..."
+    brew tap thoughtbot/formulae
     brew install rcm
 else
   fancy_echo "rcm already installed skipping"
@@ -51,8 +52,8 @@ fi
 
 # Installing dotfiles
 fancy_echo "Installing dotfiles"
-  env RCRC=$HOME/mydotfiles/rcrc rcup
   source ~/.zshrc
+  env RCRC=$HOME/mydotfiles/rcrc rcup
 
 # install xcode CLI
 fancy_echo "Installing XCode CLI Tools..."
@@ -63,8 +64,7 @@ fancy_echo "Installing XCode CLI Tools..."
 fancy_echo "Installing oh-my-zsh..."
   sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   source ~/.zshrc
-
-
+  rcup -f
 
 #installing docker
 fancy_echo "Installing and starting docker"
