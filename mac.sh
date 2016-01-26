@@ -87,6 +87,7 @@ fancy_echo "Settings some OS X settings..."
   defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true && \
   defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true && \
   defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+  defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseButtonMode TwoButton
 
 # Show finder status bar
   defaults write com.apple.finder ShowStatusBar -bool true
