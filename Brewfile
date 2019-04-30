@@ -1,5 +1,6 @@
 brew "caskroom/cask/brew-cask"
 tap 'caskroom/cask'
+tap 'caskroom/fonts'
 tap 'codeclimate/formulae'
 tap 'thoughtbot/formulae'
 tap 'nviennot/tmate'
@@ -10,6 +11,7 @@ brew "rcm"
 brew "thefuck"
 brew "yarn"
 cask "dockertoolbox"
+cask "font-fira-code"
 cask "iterm2"
 brew "awscli"
 brew "shellcheck"
