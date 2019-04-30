@@ -1,5 +1,6 @@
 brew "caskroom/cask/brew-cask"
 tap 'caskroom/cask'
+tap 'caskroom/fonts'
 tap 'codeclimate/formulae'
 tap 'thoughtbot/formulae'
 tap 'nviennot/tmate'
@@ -8,7 +9,10 @@ cask_args appdir: '/Applications'
 
 brew "rcm"
 brew "zsh-syntax-highlighting"
+brew "thefuck"
+brew "yarn"
 cask "dockertoolbox"
+cask "font-fira-code"
 cask "iterm2"
 brew "qt5"
 brew "cmake"
@@ -18,12 +22,10 @@ brew "codeclimate"
 brew "ctags"
 brew "hub"
 brew "openssl"
-# brew "macvim"
 brew "neovim/neovim/neovim"
 brew "nmap"
 brew "nvm"
 brew "pgcli"
-brew "rabbitmq"
 brew "rbenv"
 brew "reattach-to-user-namespace"
 brew "ruby-build"
@@ -34,20 +36,14 @@ brew "wget"
 brew 'imagemagick'
 brew 'redis', restart_service: true
 cask "heroku-toolbelt"
-cask "postgres"
-cask 'firefox', args: { appdir: '/Applications' }
 cask 'java' unless system '/usr/libexec/java_home --failfast'
 
 # Applications
 cask "1password"
-cask "alfred"
-cask "atom"
 cask "coconutbattery"
 cask "grandperspective"
-cask "flux"
 cask "seil"
 cask "google-chrome"
-cask "mou"
 cask "postico"
 cask "teamviewer"
 cask "transmission"

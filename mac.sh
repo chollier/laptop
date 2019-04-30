@@ -69,9 +69,6 @@ fancy_echo "Installing oh-my-zsh..."
 #installing docker
 fancy_echo "Installing and starting docker"
   brew cask install dockertoolbox
-  docker-machine create -d virtualbox dev
-  docker-machine start dev
-  eval "$(docker-machine env dev)"
 
 
 # Install Homebrew bundle and runs it
