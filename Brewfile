@@ -7,6 +7,8 @@ tap 'nviennot/tmate'
 cask_args appdir: '/Applications'
 
 brew "rcm"
+brew "thefuck"
+brew "yarn"
 cask "dockertoolbox"
 cask "iterm2"
 brew "awscli"
@@ -33,7 +35,6 @@ cask 'java' unless system '/usr/libexec/java_home --failfast'
 
 # Applications
 cask "1password"
-cask "alfred"
 cask "coconutbattery"
 cask "grandperspective"
 cask "seil"
