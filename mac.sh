@@ -2,9 +2,9 @@ fancy_echo() {
   local fmt="$1"; shift
 
   # shellcheck disable=SC2059
-  printf "#####################################"
+  printf "#####################################\n"
   printf "\n$fmt\n" "$@"
-  printf "#####################################"
+  printf "#####################################\n"
 }
 
 chsh -s $(which zsh)
