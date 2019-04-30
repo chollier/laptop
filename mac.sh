@@ -2,7 +2,9 @@ fancy_echo() {
   local fmt="$1"; shift
 
   # shellcheck disable=SC2059
+  printf "#####################################"
   printf "\n$fmt\n" "$@"
+  printf "#####################################"
 }
 
 chsh -s $(which zsh)
@@ -67,8 +69,8 @@ fancy_echo "Installing oh-my-zsh..."
   rcup -f
 
 #installing docker
-fancy_echo "Installing and starting docker"
-  brew cask install dockertoolbox
+fancy_echo "Installing docker"
+  brew cask install docker-toolbox
 
 
 # Install Homebrew bundle and runs it
