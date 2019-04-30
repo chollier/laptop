@@ -70,7 +70,7 @@ fancy_echo "Installing oh-my-zsh..."
 
 #installing docker
 fancy_echo "Installing docker"
-  brew cask install docker-toolbox
+  brew install docker
 
 
 # Install Homebrew bundle and runs it
