@@ -1,20 +1,15 @@
-brew "caskroom/cask/brew-cask"
-tap 'caskroom/cask'
-tap 'caskroom/fonts'
 tap 'codeclimate/formulae'
 tap 'thoughtbot/formulae'
 tap 'nviennot/tmate'
-
-cask_args appdir: '/Applications'
 
 brew "rcm"
 brew "zsh-syntax-highlighting"
 brew "thefuck"
 brew "yarn"
 brew "docker"
-cask "font-fira-code"
-cask "iterm2"
-brew "qt5"
+# brew "font-fira-code"
+brew "iterm2"
+# brew "qt5"
 brew "cmake"
 brew "awscli"
 brew "shellcheck"
@@ -22,7 +17,7 @@ brew "codeclimate"
 brew "ctags"
 brew "hub"
 brew "openssl"
-brew "neovim/neovim/neovim"
+brew "neovim"
 brew "nmap"
 brew "nvm"
 brew "pgcli"
@@ -35,20 +30,20 @@ brew "tmux"
 brew "wget"
 brew 'imagemagick'
 brew 'redis', restart_service: true
-cask "heroku-toolbelt"
-cask 'java' unless system '/usr/libexec/java_home --failfast'
+brew "heroku-toolbelt"
+# brew 'java' unless system '/usr/libexec/java_home --failfast'
 
 # Applications
-cask "1password"
-cask "coconutbattery"
-cask "grandperspective"
-cask "seil"
-cask "google-chrome"
-cask "postico"
-cask "teamviewer"
-cask "transmission"
-cask "tower"
-cask "transmit"
-cask "vlc"
-cask "spectacle"
-cask "dropbox"
+# brew "1password"
+brew "coconutbattery"
+brew "grandperspective"
+brew "seil"
+brew "google-chrome"
+brew "postico"
+brew "teamviewer"
+brew "transmission"
+# brew "tower"
+# brew "transmit"
+brew "vlc"
+brew "spectacle"
+# brew "dropbox"
