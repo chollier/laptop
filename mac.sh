@@ -16,8 +16,7 @@ sudo xcodebuild -license
 
 if ! command -v brew >/dev/null; then
   fancy_echo "Installing Homebrew ..."
-    curl -fsS 'https://raw.githubusercontent.com/Homebrew/install/master/install' | ruby
-    brew install caskroom/cask/brew-cask
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     export PATH="/usr/local/bin:$PATH"
 else
   fancy_echo "Homebrew already installed. Skipping ..."
