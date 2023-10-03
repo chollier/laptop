@@ -44,7 +44,7 @@ fi
 cd ~
 if [ ! -d "$HOME/mydotfiles" ]; then
   fancy_echo "Downloading dotfiles"
-    git clone git://github.com/chollier/mydotfiles
+    git clone https://github.com/chollier/mydotfiles.git
 else
   fancy_echo "mydotfiles already present updating them..."
     cd ~/mydotfiles
