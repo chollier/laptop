@@ -1,6 +1,5 @@
 tap 'codeclimate/formulae'
 tap 'thoughtbot/formulae'
-tap 'nviennot/tmate'
 
 brew "rcm"
 brew "zsh-syntax-highlighting"
