@@ -144,25 +144,25 @@ fancy_echo "Install iTerm Preferences..."
 #install node and ruby last versions
 
 source ~/.zshrc
-fancy_echo "Running nvm install stable..."
-  nvm install stable
+# fancy_echo "Running nvm install stable..."
+  # nvm install stable
 
-brew unlink openssl && brew link openssl --force
+# brew unlink openssl && brew link openssl --force
 
-eval "$(rbenv init - zsh)"
-if ! rbenv versions | grep -Fq "2.2.1"; then
-  rbenv install 2.2.1
-fi
+# eval "$(rbenv init - zsh)"
+# if ! rbenv versions | grep -Fq "2.2.1"; then
+  # rbenv install 2.2.1
+# fi
 
-rbenv global 2.2.1
-rbenv shell 2.2.1
+# rbenv global 2.2.1
+# rbenv shell 2.2.1
 
-fancy_echo "updage gem, install bundler"
-  gem update --system
-  gem install bundler
+# fancy_echo "updage gem, install bundler"
+  # gem update --system
+  # gem install bundler
 
 # config bundler
-  number_of_cores=$(sysctl -n hw.ncpu)
-  bundle config --global jobs $((number_of_cores - 1))
+  # number_of_cores=$(sysctl -n hw.ncpu)
+  # bundle config --global jobs $((number_of_cores - 1))
 
 fancy_echo "DONE !!"
