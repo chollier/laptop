@@ -67,6 +67,11 @@ fancy_echo "Installing oh-my-zsh..."
   source ~/.zshrc
   rcup -f
 
+# Install oh my zsh
+fancy_echo "Installing powerlevel10k"
+  brew install powerlevel10k
+  echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
+
 #installing docker
 fancy_echo "Installing docker"
   brew install docker
