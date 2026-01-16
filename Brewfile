@@ -1,11 +1,11 @@
 # Taps
 tap "thoughtbot/formulae"
+tap "homebrew/cask-fonts"
 
 # Shell & Terminal
 brew "rcm"
 brew "zsh-syntax-highlighting"
 brew "zsh-autosuggestions"
-brew "powerlevel10k"
 brew "tmux"
 brew "reattach-to-user-namespace"
 

@@ -110,10 +110,15 @@ fi
 fancy_echo "Installing dotfiles with rcm..."
 env RCRC=$HOME/mydotfiles/rcrc rcup
 
-# Configure powerlevel10k
-fancy_echo "Configuring powerlevel10k..."
-if ! grep -q "powerlevel10k.zsh-theme" ~/.zshrc; then
-  echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >> ~/.zshrc
+# Install powerlevel10k theme
+cd ~
+if [ ! -d "$HOME/powerlevel10k" ]; then
+  fancy_echo "Installing powerlevel10k theme..."
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+else
+  fancy_echo "powerlevel10k already exists. Updating..."
+  cd ~/powerlevel10k
+  git pull
 fi
 
 # macOS Settings - Interactive configuration
