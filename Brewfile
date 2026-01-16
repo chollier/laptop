@@ -1,6 +1,5 @@
 # Taps
 tap "thoughtbot/formulae"
-tap "homebrew/cask-fonts"
 
 # Shell & Terminal
 brew "rcm"
