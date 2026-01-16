@@ -6,6 +6,7 @@ tap "homebrew/cask-fonts"
 brew "rcm"
 brew "zsh-syntax-highlighting"
 brew "zsh-autosuggestions"
+brew "powerlevel10k"
 brew "tmux"
 brew "reattach-to-user-namespace"
 
