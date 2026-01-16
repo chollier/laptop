@@ -34,6 +34,7 @@ brew "openssl"
 brew "wget"
 brew "jq"                   # JSON processor
 brew "imagemagick"
+brew "thefuck"              # command corrector
 
 # Network & Debug
 brew "nmap"
@@ -50,4 +51,3 @@ cask "vlc"
 # cask "1password"
 # cask "slack"
 # cask "spotify"
-# brew "thefuck"            # command corrector
