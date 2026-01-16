@@ -15,11 +15,12 @@ ask_yes_no() {
   local response
 
   if [[ "$default" == "y" ]]; then
-    read -p "$prompt [Y/n]: " -n 1 -r response
+    printf "%s [Y/n]: " "$prompt"
   else
-    read -p "$prompt [y/N]: " -n 1 -r response
+    printf "%s [y/N]: " "$prompt"
   fi
-  echo
+
+  read -r response
 
   # Handle empty response (just pressed Enter)
   if [[ -z "$response" ]]; then
@@ -122,15 +123,8 @@ echo "The following sections will configure various macOS settings."
 echo "You can choose which categories to apply."
 echo ""
 
-# Safari Developer Settings
-if ask_yes_no "Enable Safari developer features? (Web Inspector, debug menu)"; then
-  echo "Configuring Safari..."
-  defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
-  defaults write com.apple.Safari IncludeDevelopMenu -bool true
-  defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
-  defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
-  defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
-fi
+# Note: Safari settings are sandboxed in modern macOS and can't be modified via defaults write
+# Enable developer features manually: Safari > Settings > Advanced > Show features for web developers
 
 # Finder Settings
 if ask_yes_no "Configure Finder? (Show hidden files, extensions, status bar, path bar)"; then
@@ -201,4 +195,5 @@ echo "  - Transfer ~/.ssh keys"
 echo "  - Transfer .docker/config (if needed)"
 echo "  - Transfer zsh history"
 echo "  - Run 'p10k configure' to customize your prompt"
+echo "  - Enable Safari developer features: Safari > Settings > Advanced > Show features for web developers"
 echo "  - Restart your terminal or run: source ~/.zshrc"
