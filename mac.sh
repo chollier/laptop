@@ -106,6 +106,24 @@ if [[ "$SHELL" != "$(which zsh)" ]]; then
   chsh -s "$(which zsh)"
 fi
 
+# Install oh-my-zsh
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  fancy_echo "Installing oh-my-zsh..."
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+else
+  fancy_echo "oh-my-zsh already installed. Skipping..."
+fi
+
+# Install powerlevel10k theme for oh-my-zsh
+if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" ]; then
+  fancy_echo "Installing powerlevel10k theme..."
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+else
+  fancy_echo "powerlevel10k already installed. Updating..."
+  cd ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+  git pull
+fi
+
 # Install dotfiles
 fancy_echo "Installing dotfiles with rcm..."
 env RCRC=$HOME/mydotfiles/rcrc rcup
