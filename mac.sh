@@ -169,25 +169,16 @@ if ask_yes_no "Configure Dock? (Auto-hide, position left, magnification)"; then
 fi
 
 # Screenshot Settings
-if ask_yes_no "Configure screenshots? (Save to ~/Screenshots, disable shadow)"; then
+if ask_yes_no "Configure screenshots? (Save to ~/Screenshots)"; then
   echo "Configuring screenshots..."
   mkdir -p ~/Screenshots
   defaults write com.apple.screencapture location -string "$HOME/Screenshots"
-  defaults write com.apple.screencapture disable-shadow -bool true
 fi
 
 # Mouse Settings
 if ask_yes_no "Enable right-click for Bluetooth mouse?"; then
   echo "Configuring mouse..."
   defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseButtonMode TwoButton
-fi
-
-# Disk Image Settings
-if ask_yes_no "Disable disk image verification? (Faster mounting)"; then
-  echo "Configuring disk images..."
-  defaults write com.apple.frameworks.diskimages skip-verify -bool true
-  defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
-  defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
 fi
 
 # Software Update Settings
