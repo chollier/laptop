@@ -1,6 +1,5 @@
 # Taps
 tap "thoughtbot/formulae"
-tap "homebrew/cask-fonts"
 
 # Shell & Terminal
 brew "rcm"
@@ -39,9 +38,6 @@ brew "imagemagick"
 # Network & Debug
 brew "nmap"
 brew "tmate"
-
-# Fonts
-cask "font-meslo-lg-nerd-font"
 
 # Applications
 cask "google-chrome"
