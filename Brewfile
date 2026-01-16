@@ -1,48 +1,58 @@
-tap 'codeclimate/formulae'
-tap 'thoughtbot/formulae'
+# Taps
+tap "thoughtbot/formulae"
+tap "homebrew/cask-fonts"
 
+# Shell & Terminal
 brew "rcm"
 brew "zsh-syntax-highlighting"
-brew "thefuck"
-brew "yarn"
-brew "docker"
-# brew "font-fira-code"
-brew "iterm2"
-# brew "qt5"
-# brew "cmake"
-brew "awscli"
-brew "shellcheck"
-# brew "codeclimate"
-# brew "ctags"
-# brew "hub"
-brew "openssl"
-brew "neovim"
-brew "nmap"
-brew "nvm"
-brew "pgcli"
-brew "rbenv"
-brew "reattach-to-user-namespace"
-brew "ruby-build"
-brew "the_silver_searcher"
-brew "tmate"
+brew "zsh-autosuggestions"
+brew "powerlevel10k"
 brew "tmux"
+brew "reattach-to-user-namespace"
+
+# Editor
+brew "neovim"
+
+# Version Managers
+# Note: nvm should be installed via official script if needed, not brew
+
+# Search & File Tools
+brew "the_silver_searcher"  # ag
+brew "fzf"
+brew "ripgrep"              # rg - faster than ag
+brew "fd"                   # faster find alternative
+
+# Git
+brew "git"
+brew "tig"                  # git log viewer
+
+# Cloud & Infra
+brew "awscli"
+
+# Development Tools
+brew "yarn"
+brew "shellcheck"
+brew "openssl"
 brew "wget"
-brew 'imagemagick'
-brew 'redis', restart_service: true
-brew "heroku-toolbelt"
-# brew 'java' unless system '/usr/libexec/java_home --failfast'
+brew "jq"                   # JSON processor
+brew "imagemagick"
+
+# Network & Debug
+brew "nmap"
+brew "tmate"
+
+# Fonts
+cask "font-meslo-lg-nerd-font"
 
 # Applications
-# brew "1password"
-brew "coconutbattery"
-brew "grandperspective"
-brew "seil"
-brew "google-chrome"
-brew "postico"
-brew "teamviewer"
-brew "transmission"
-# brew "tower"
-# brew "transmit"
-brew "vlc"
-brew "spectacle"
-# brew "dropbox"
+cask "google-chrome"
+cask "visual-studio-code"
+cask "rectangle"            # window management (replaces Spectacle)
+cask "iterm2"
+cask "vlc"
+
+# Optional - uncomment if needed
+# cask "1password"
+# cask "slack"
+# cask "spotify"
+# brew "thefuck"            # command corrector
